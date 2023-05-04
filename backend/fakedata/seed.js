@@ -18,6 +18,6 @@ for (let i = 0; i < 100; i++) {
 	contacts.push(contact);
 }
 
-const result = await db.collection("contact").insertMany(contacts);
+const result = await db.collection("contacts").insertMany(contacts);
 console.log(result);
 process.exit();
