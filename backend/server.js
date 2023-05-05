@@ -12,7 +12,7 @@ const upload = multer();
 
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: true }));
 
 app.get(API_VERSION + "/contacts", getContacts);
 app.post(API_VERSION + "/contacts", addNewContact);
