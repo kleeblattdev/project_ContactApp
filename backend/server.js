@@ -3,7 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 import multer from "multer";
 import "./config/config.js";
-import { getContacts } from "./controller/contactController.js";
+import { addNewContact, getContacts } from "./controller/contactController.js";
 
 const app = express();
 const PORT = process.env.PORT || 9000;
@@ -15,6 +15,9 @@ app.use(express.json());
 app.use(cors());
 
 app.get(API_VERSION + "/contacts", getContacts);
-app.post(API_VERSION + "/contacts");
+app.post(API_VERSION + "/contacts", addNewContact);
+
+//Update contact information
+//app.put(API_VERSION + "/contacts");
 
 app.listen(PORT, () => console.log("Server listening on port", PORT));
